@@ -47,10 +47,10 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/loginFail.jsp").forward(request, response);
         }
 
-        String json = "Gucci";
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(json);
+//        String json = "Gucci";
+//        response.setContentType("application/json");
+//        response.setCharacterEncoding("UTF-8");
+//        response.getWriter().write(json);
     }
 }
 
