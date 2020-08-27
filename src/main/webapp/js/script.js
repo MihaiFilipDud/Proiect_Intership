@@ -64,12 +64,12 @@ $(document).ready(function()    {
         //window.location.href = "manager.html";
         $.ajax({
             type: 'POST',
-            url: 'login',
+            url: 'https://trafic-aerian.azurewebsites.net/trafic-aerian/login',
             dataType: 'json',
             success: function(data){
                   console.log("Succes");
                   var bool = 0;
-                 for (var key in data) {
+                  for (var key in data) {
                    if (data.hasOwnProperty(key)) {
                       if (/company/.test(key)) {
                         console.log('match!', data[key]); // do stuff here!
