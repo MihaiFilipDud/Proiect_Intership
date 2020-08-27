@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
             int totalDriverDistance = DistanceCalculator.getTotalDistance(routes);
             session.setAttribute("driverDistanceTotal", totalDriverDistance);
 
-            request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
+            request.getRequestDispatcher("/manager.html").forward(request, response);
         }
         else {
             request.getRequestDispatcher("/loginFail.jsp").forward(request, response);

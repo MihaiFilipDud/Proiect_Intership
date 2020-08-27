@@ -59,7 +59,7 @@ $('.tab a').on('onload', function (e) {
 
 $(document).ready(function()    {
     $("#request_login").click(function(e)    {
-        var username = $("#username").val().trim();
+        var username = $("#email").val().trim();
         var password = $("#password").val().trim();
         //window.location.href = "manager.html";
         $.ajax({
