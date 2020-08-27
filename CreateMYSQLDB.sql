@@ -121,9 +121,6 @@ INSERT INTO `atmanagers` (`id`, `dob`, `joiningDate`, `name`, `username`, `compa
 -- Eliminarea datelor din tabel `plane`
 --
 
-INSERT INTO `plane` (`ID`, `company`, `model`) VALUES
-('123', 'Tarom', 'A320'),
-('556', 'Tarom', '747');
 
 -- --------------------------------------------------------
 
@@ -151,6 +148,11 @@ CREATE TABLE IF NOT EXISTS `plane` (
   `model` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `plane` (`ID`, `company`, `model`) VALUES
+('123', 'Tarom', 'A320'),
+('556', 'Tarom', '747');
+
 
 --
 -- Eliminarea datelor din tabel `planeschedule`
