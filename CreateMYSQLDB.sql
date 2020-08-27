@@ -40,3 +40,149 @@ INSERT IGNORE INTO `fares` (`emp_id`, `pickup`, `dropoff`, `start`, `end`, `fare
 INSERT IGNORE INTO `fares` (`emp_id`, `pickup`, `dropoff`, `start`, `end`, `fare_charge`, `driver_fee`, `passenger_rating`, `driver_rating`) VALUES ((select `id` from `employees` where `username`='fred'), '84 Mammoth Way, Bedrock, WA', '40 Stegasaurus St, Limestone, WA', '2014-05-06 01:18:00', '2014-05-06 01:29:00', '1910', '1432', '5', '1');
 INSERT IGNORE INTO `fares` (`emp_id`, `pickup`, `dropoff`, `start`, `end`, `fare_charge`, `driver_fee`, `passenger_rating`, `driver_rating`) VALUES ((select `id` from `employees` where `username`='barney'), '97 Stegasaurus St, Bedrock, WA', '93 Shale St, Bedrock, WA', '2014-12-13 10:43:00', '2014-12-13 11:20:00', '1869', '1401', '3', '2');
 INSERT IGNORE INTO `fares` (`emp_id`, `pickup`, `dropoff`, `start`, `end`, `fare_charge`, `driver_fee`, `passenger_rating`, `driver_rating`) VALUES ((select `id` from `employees` where `username`='barney'), '43 Brontosaurus Blvd, Bedrock, WA', '51 Stegasaurus St, Rock Gardens, WA', '2014-05-17 10:41:00', '2014-05-17 10:53:00', '1460', '1095', '3', '2');
+
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE IF NOT EXISTS `account` (
+  `username` varchar(255) COLLATE utf8_bin NOT NULL,
+  `id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Eliminarea datelor din tabel `account`
+--
+
+INSERT INTO `account` (`username`, `id`, `password`) VALUES
+('dudu', '569a0763-ecbf-48c8-8497-ad6313fe4aed', '666'),
+('mihai', NULL, '666'),
+('andrei', NULL, '666');
+
+-- --------------------------------------------------------
+
+--
+-- Structură tabel pentru tabel `atcontrollers`
+--
+
+DROP TABLE IF EXISTS `atcontrollers`;
+CREATE TABLE IF NOT EXISTS `atcontrollers` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `dob` datetime DEFAULT NULL,
+  `joiningDate` datetime DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `airport` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_7en5ocppnji5rplr2159xmp8w` (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Eliminarea datelor din tabel `atcontrollers`
+--
+
+INSERT INTO `atcontrollers` (`id`, `dob`, `joiningDate`, `name`, `username`, `airport`) VALUES
+('8e47186f-b38b-4596-b8b7-8841ce2bef49', '1990-12-14 00:00:00', '2020-08-03 10:28:27', 'Andrei Costin', 'andrei', 'Cluj-Napoca');
+
+-- --------------------------------------------------------
+
+--
+-- Structură tabel pentru tabel `atmanagers`
+--
+
+DROP TABLE IF EXISTS `atmanagers`;
+CREATE TABLE IF NOT EXISTS `atmanagers` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `dob` datetime DEFAULT NULL,
+  `joiningDate` datetime DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `company` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_mbv8ap6t5qy64i6wni75we65i` (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Eliminarea datelor din tabel `atmanagers`
+--
+
+INSERT INTO `atmanagers` (`id`, `dob`, `joiningDate`, `name`, `username`, `company`) VALUES
+('99103482-d303-4dac-a76f-ac94ff891dd3', '2020-03-22 23:56:55', '2020-03-22 23:56:55', 'Mihai Filip-Dud', 'dudu', 'TAROM'),
+('75f35d9f-76f1-4431-a10b-fdc207686e25', '1998-09-27 00:00:00', '2020-07-31 13:03:25', 'Mihai Filip-Dud', 'mihai', 'Tarom');
+
+-- --------------------------------------------------------
+
+--
+-- Structură tabel pentru tabel `plane`
+--
+
+DROP TABLE IF EXISTS `plane`;
+CREATE TABLE IF NOT EXISTS `plane` (
+  `ID` varchar(255) COLLATE utf8_bin NOT NULL,
+  `company` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `model` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Eliminarea datelor din tabel `plane`
+--
+
+INSERT INTO `plane` (`ID`, `company`, `model`) VALUES
+('123', 'Tarom', 'A320'),
+('556', 'Tarom', '747');
+
+-- --------------------------------------------------------
+
+--
+-- Structură tabel pentru tabel `planeschedule`
+--
+
+DROP TABLE IF EXISTS `planeschedule`;
+CREATE TABLE IF NOT EXISTS `planeschedule` (
+  `code` varchar(255) COLLATE utf8_bin NOT NULL,
+  `airport` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `arrival` datetime DEFAULT NULL,
+  `departure` datetime DEFAULT NULL,
+  `destination` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `ID` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`code`),
+  KEY `FKmd5bsunwnteovnpao47n2qqca` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Eliminarea datelor din tabel `planeschedule`
+--
+
+INSERT INTO `planeschedule` (`code`, `airport`, `arrival`, `departure`, `destination`, `status`, `ID`) VALUES
+('678', 'Cluj-Napoca', '2020-08-04 17:27:00', '2020-08-04 20:10:00', 'Paris', 'OK', '556'),
+('987', 'Cluj-Napoca', '2020-08-03 13:23:00', '2020-08-03 14:55:00', 'Viena', 'OK', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Structură tabel pentru tabel `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `DTYPE` varchar(31) COLLATE utf8_bin NOT NULL,
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `dob` datetime DEFAULT NULL,
+  `joiningDate` datetime DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `company` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `airport` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Constrângeri pentru tabele eliminate
+--
+
+--
+-- Constrângeri pentru tabele `planeschedule`
+--
+ALTER TABLE `planeschedule`
+  ADD CONSTRAINT `FKmd5bsunwnteovnpao47n2qqca` FOREIGN KEY (`ID`) REFERENCES `plane` (`ID`);
+COMMIT;
