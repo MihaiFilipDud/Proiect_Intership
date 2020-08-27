@@ -61,10 +61,10 @@ $(document).ready(function()    {
     $("#request_login").click(function(e)    {
         var username = $("#username").val().trim();
         var password = $("#password").val().trim();
-        window.location.href = "manager.html";
+        //window.location.href = "manager.html";
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:8080/tryLogin?username=' + username + '&password=' + password,
+            url: 'login',
             dataType: 'json',
             success: function(data){
                   console.log("Succes");
