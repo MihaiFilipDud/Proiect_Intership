@@ -64,7 +64,7 @@ $(document).ready(function()    {
         //window.location.href = "manager.html";
         $.ajax({
             type: 'POST',
-            url: 'https://trafic-aerian.azurewebsites.net/trafic-aerian/login',
+            //url: 'https://trafic-aerian.azurewebsites.net/trafic-aerian/login',
             dataType: 'json',
             success: function(data){
                   console.log("Succes");
