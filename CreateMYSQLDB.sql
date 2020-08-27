@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   `id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `password` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Eliminarea datelor din tabel `account`
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `atcontrollers` (
   `airport` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_7en5ocppnji5rplr2159xmp8w` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Eliminarea datelor din tabel `atcontrollers`
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `atmanagers` (
   `company` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_mbv8ap6t5qy64i6wni75we65i` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Eliminarea datelor din tabel `atmanagers`
@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `company` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `airport` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Constrângeri pentru tabele eliminate
