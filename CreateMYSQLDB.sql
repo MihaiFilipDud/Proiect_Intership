@@ -41,7 +41,7 @@ INSERT IGNORE INTO `fares` (`emp_id`, `pickup`, `dropoff`, `start`, `end`, `fare
 INSERT IGNORE INTO `fares` (`emp_id`, `pickup`, `dropoff`, `start`, `end`, `fare_charge`, `driver_fee`, `passenger_rating`, `driver_rating`) VALUES ((select `id` from `employees` where `username`='barney'), '97 Stegasaurus St, Bedrock, WA', '93 Shale St, Bedrock, WA', '2014-12-13 10:43:00', '2014-12-13 11:20:00', '1869', '1401', '3', '2');
 INSERT IGNORE INTO `fares` (`emp_id`, `pickup`, `dropoff`, `start`, `end`, `fare_charge`, `driver_fee`, `passenger_rating`, `driver_rating`) VALUES ((select `id` from `employees` where `username`='barney'), '43 Brontosaurus Blvd, Bedrock, WA', '51 Stegasaurus St, Rock Gardens, WA', '2014-05-17 10:41:00', '2014-05-17 10:53:00', '1460', '1095', '3', '2');
 
-DROP TABLE IF EXISTS `account`;
+
 CREATE TABLE IF NOT EXISTS `account` (
   `username` varchar(255) COLLATE utf8_bin NOT NULL,
   `id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -64,7 +64,6 @@ INSERT INTO `account` (`username`, `id`, `password`) VALUES
 -- Structură tabel pentru tabel `atcontrollers`
 --
 
-DROP TABLE IF EXISTS `atcontrollers`;
 CREATE TABLE IF NOT EXISTS `atcontrollers` (
   `id` varchar(255) COLLATE utf8_bin NOT NULL,
   `dob` datetime DEFAULT NULL,
@@ -89,7 +88,6 @@ INSERT INTO `atcontrollers` (`id`, `dob`, `joiningDate`, `name`, `username`, `ai
 -- Structură tabel pentru tabel `atmanagers`
 --
 
-DROP TABLE IF EXISTS `atmanagers`;
 CREATE TABLE IF NOT EXISTS `atmanagers` (
   `id` varchar(255) COLLATE utf8_bin NOT NULL,
   `dob` datetime DEFAULT NULL,
@@ -115,7 +113,6 @@ INSERT INTO `atmanagers` (`id`, `dob`, `joiningDate`, `name`, `username`, `compa
 -- Structură tabel pentru tabel `plane`
 --
 
-DROP TABLE IF EXISTS `plane`;
 CREATE TABLE IF NOT EXISTS `plane` (
   `ID` varchar(255) COLLATE utf8_bin NOT NULL,
   `company` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -137,7 +134,6 @@ INSERT INTO `plane` (`ID`, `company`, `model`) VALUES
 -- Structură tabel pentru tabel `planeschedule`
 --
 
-DROP TABLE IF EXISTS `planeschedule`;
 CREATE TABLE IF NOT EXISTS `planeschedule` (
   `code` varchar(255) COLLATE utf8_bin NOT NULL,
   `airport` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -164,7 +160,6 @@ INSERT INTO `planeschedule` (`code`, `airport`, `arrival`, `departure`, `destina
 -- Structură tabel pentru tabel `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `DTYPE` varchar(31) COLLATE utf8_bin NOT NULL,
   `id` varchar(255) COLLATE utf8_bin NOT NULL,
