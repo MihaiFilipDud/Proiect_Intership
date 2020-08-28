@@ -21,7 +21,7 @@
       <h2 class="text-left text-muted">Sorry, please back up and try again</h2>
     </div>
     <div class="row">
-      <p class="lead text-left">We couldn't find your email and password.</p>
+      <p class="lead text-left">We couldn't find your username and password.</p>
     </div>
   </div>
 
