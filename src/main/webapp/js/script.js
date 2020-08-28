@@ -58,53 +58,6 @@ $('.tab a').on('onload', function (e) {
 });
 
 $(document).ready(function()    {
-    // $("#request_login").click(function(e)    {
-    //     var username = $("#email").val().trim();
-    //     var password = $("#password").val().trim();
-    //     //window.location.href = "manager.html";
-    //     $.ajax({
-    //         type: 'POST',
-    //         //url: 'https://trafic-aerian.azurewebsites.net/trafic-aerian/login',
-    //         dataType: 'json',
-    //         success: function(data){
-    //               console.log("Succes");
-    //               var bool = 0;
-    //               for (var key in data) {
-    //                if (data.hasOwnProperty(key)) {
-    //                   if (/company/.test(key)) {
-    //                     console.log('match!', data[key]); // do stuff here!
-    //                     //window.alert("Manager logged in successfully");
-    //                     bool = 1;
-    //                   }
-    //                 }
-    //               }
-    //
-    //               sessionStorage.setItem("name", data.name);
-    //               var x = sessionStorage.getItem("name");
-    //               console.log(x);
-    //               if (bool == 1){
-    //
-    //                     window.location.href = "manager.html";
-    //
-    //                     sessionStorage.setItem('company', data.company);
-    //
-    //
-    //                   }
-    //                   else{
-    //                     //window.alert("Controller logged in successfully");
-    //                     sessionStorage.setItem('airport', data.airport);
-    //                     window.location.href = "controller.html";
-    //
-    //                   }
-    //
-    //         },
-    //         error: function(){
-    //             console.log("Error login");
-    //             window.alert("The username or password is incorrect");
-    //         }
-    //
-    //     });
-    // });
 
     $("#man_button").click(function(e)    {
         var name = $("#man_name").val().trim();
@@ -156,3 +109,51 @@ $(document).ready(function()    {
 
 });
 
+
+// $("#request_login").click(function(e)    {
+//     var username = $("#email").val().trim();
+//     var password = $("#password").val().trim();
+//     //window.location.href = "manager.html";
+//     $.ajax({
+//         type: 'POST',
+//         //url: 'https://trafic-aerian.azurewebsites.net/trafic-aerian/login',
+//         dataType: 'json',
+//         success: function(data){
+//               console.log("Succes");
+//               var bool = 0;
+//               for (var key in data) {
+//                if (data.hasOwnProperty(key)) {
+//                   if (/company/.test(key)) {
+//                     console.log('match!', data[key]); // do stuff here!
+//                     //window.alert("Manager logged in successfully");
+//                     bool = 1;
+//                   }
+//                 }
+//               }
+//
+//               sessionStorage.setItem("name", data.name);
+//               var x = sessionStorage.getItem("name");
+//               console.log(x);
+//               if (bool == 1){
+//
+//                     window.location.href = "manager.html";
+//
+//                     sessionStorage.setItem('company', data.company);
+//
+//
+//                   }
+//                   else{
+//                     //window.alert("Controller logged in successfully");
+//                     sessionStorage.setItem('airport', data.airport);
+//                     window.location.href = "controller.html";
+//
+//                   }
+//
+//         },
+//         error: function(){
+//             console.log("Error login");
+//             window.alert("The username or password is incorrect");
+//         }
+//
+//     });
+// });
